@@ -14,7 +14,7 @@ Purpose: Reads the present state of an input GPIO pin, returns either GPIO_PIN_S
 Example: Pin_State cur_state = GPIO_ReadPin(GPIOA, 0);
 
 Function: void GPIO_Toggle(GPIO_TypeDef *Port, uint8_t pin);
-Purpose: Toggles an output pin i.e sets high to low and low to high
+Purpose: Toggles an output pin i.e sets high to low and low to high.
 Example: GPIO_Toggle(GPIOA, 0);
 
 Function: void GPIO_Interrupt_Setup(int pin, Edge edge_select)
