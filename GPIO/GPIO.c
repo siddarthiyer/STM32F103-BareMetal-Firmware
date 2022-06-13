@@ -67,6 +67,7 @@ void GPIO_Toggle(GPIO_TypeDef *Port, uint8_t pin){
 
 void GPIO_Interrupt_Setup(int pin, Edge edge_select)
 {
+	RCC->APB2ENR |= RCC_APB2ENR_AFIOEN;
 	EXTI ->IMR |= 1 << pin;
 	if(edge_select == Rising){
 		EXTI ->RTSR |= 1 << pin;
@@ -78,9 +79,22 @@ void GPIO_Interrupt_Setup(int pin, Edge edge_select)
 		EXTI ->RTSR |= 1 << pin;
 		EXTI ->FTSR |= 1 << pin;
 	}
-	NVIC_SetPriority(EXTI0_IRQn,0);
-	NVIC_EnableIRQ(EXTI0_IRQn);
+	NVIC_SetPriority(EXTI1_IRQn,1);
+	NVIC_EnableIRQ(EXTI1_IRQn);
 }
+// Callback function for interrupt
+
+/*
+void EXTI1_IRQHandler(void)
+{
+
+	if (EXTI->PR & (1<<1))    // If the PA1 triggered the interrupt
+	{
+		//ADD CODE HERE
+		EXTI->PR |= (1<<1);  // Clear the interrupt flag by writing a 1
+	}
+}
+*/
 
 
 
