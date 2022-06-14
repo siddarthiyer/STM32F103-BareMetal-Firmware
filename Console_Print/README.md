@@ -1,5 +1,5 @@
 # Serial Print
-STM32F103 driver used to print data to a serial port since printf does not work with Cube IDE and STM32. User has the ability to select USART Port and baud rate.
+STM32F103 driver used to print data to a serial port since printf does not work with STM32 UART. User has the ability to select USART Port and baud rate.
 
 Functions Include:
 
