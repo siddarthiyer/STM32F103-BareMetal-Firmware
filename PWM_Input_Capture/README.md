@@ -1,3 +1,4 @@
+# PWM Input Capture
 Driver used for PWM Input Capture. Used to measure duration of rising edge and period of PWM signal. <br />
 
 Functions:  <br />
